@@ -9,6 +9,7 @@ import {
 import { ArrowRight } from "lucide-react";
 import Dashboard from "@/components/Dashboard";
 import UserAccountNav from "./UserAccountNav";
+import MobileNav from "./MobileNav";
 
 const NavBar = () => {
   const { getUser } = getKindeServerSession();
@@ -23,7 +24,7 @@ const NavBar = () => {
             <span>quill.</span>
           </Link>
 
-          {/* TODO: add mobile navbar */}
+          <MobileNav isAuth={!!user} />
 
           <div className="hidden items-center space-x-4 sm:flex">
             {!user ? (

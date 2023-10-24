@@ -6,6 +6,7 @@ import { trpc } from "../_trpc/client";
 import { Loader2 } from "lucide-react";
 
 const AuthCallbackPage = () => {
+  console.log("AuthCallbackPage");
   const router = useRouter();
 
   const searchParams = useSearchParams();
@@ -20,6 +21,7 @@ const AuthCallbackPage = () => {
     },
     onError: (err) => {
       if (err.data?.code === "UNAUTHORIZED") {
+        console.log(err);
         router.push("/sign-in");
       }
     },
